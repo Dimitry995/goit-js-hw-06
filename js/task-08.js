@@ -1,21 +1,19 @@
-
-<script type="text/javascript">
-function Input(){
-login_ok = false;
-user_name = "";
-password = "";
-user_name = prompt("Логін","");
-user_name = user_name.toLowerCase();
-password = prompt("Пароль","");
-password = password.toLowerCase();
-if (user_name=="login" && password=="pass") {
- login_ok = true;
- window.location = "index.php";
+const form = document.querySelector(".login-form");
+form.addEventListener("submit", onSubmitForm);
+function onSubmitForm(event) {
+  event.preventDefault();
+  const emailValue = event.currentTarget.elements.email.value;
+  const emailKey = event.currentTarget.elements.email.name;
+  const passwordValue = event.currentTarget.elements.password.value;
+  const passwordKey = event.currentTarget.elements.password.name;
+  if (emailValue === "" || passwordValue === "") {
+    alert("Warning! Email and Password must be filled!");
+  } else {
+    const formFilled = {
+      [emailKey]: emailValue,
+      [passwordKey]: passwordValue,
+    };
+    console.log(formFilled);
+    form.reset();
+  }
 }
-if (user_name=="login2" && password=="pass2") {
- login_ok = true;
- window.location = "forum/index.php";
-}
-if (login_ok==false) alert("Невірний логін або пароль!");
-}
-</script>
