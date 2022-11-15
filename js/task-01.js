@@ -1,5 +1,5 @@
 const listItems = categories.children;
-console.log(listItems);
+console.log(listItems.length);
 const categoryTitles = [];
 document.querySelectorAll(".item h2").forEach(function (title) {
   categoryTitles.push(title.textContent);
