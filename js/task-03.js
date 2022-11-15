@@ -19,4 +19,3 @@ images.forEach(el => {
     `<li><img src = "${el.url}" alt = "${el.alt}"  width = "150" height = "100" /></li>`,
   );
 });
-console.log(gallery);
